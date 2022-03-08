@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+
+
+    <title>Hello!</title>
+
+
+  </head>
+  <link rel= "stylesheet" href= "/style.css">
+  <script src= "/script.js" defer></script>
+  <body>
+    
+    
+        <h1 class="title">Light and Sound Memory Game</h1>
+
+       
+        
+          
+          <p>
+            Welcome to the light and sound memory game! Repeat the patterns 
+            by pressing the buttons.
+          </p>
+          
+          <!-- ADD BUTTON HERE -->
+          <button id="startBtn" onclick= "startGame()">
+            Start
+          </button>
+          
+          <button id="stopBtn" class="hidden" onclick= "stopGame()">
+            Stop
+          </button>
+          
+          <div id="gameButtonArea">
+          
+            <button class id="button1" onclick="guess(1)" onmousedown="startTone(1)" onmouseup="stopTone()" >
+              <img class id="image" src = "https://cdn.glitch.global/27d45646-6ef9-4144-b0eb-b147ee7484d8/green-button.png?v=1646752898206" alt= "green button" width = "100">
+              
+      
+            </button>
+            <button id="button2" onclick="guess(2)" onmousedown="startTone(2)" onmouseup="stopTone()">
+              <img class = "image" src = "https://cdn.glitch.global/27d45646-6ef9-4144-b0eb-b147ee7484d8/blue-button.png?v=1646762552067https://cdn.glitch.global/27d45646-6ef9-4144-b0eb-b147ee7484d8/blue-button.png?v=1646762836693" alt= "blue button" width = "100">
+            </button>
+            <button id="button3" onclick="guess(3)" onmousedown="startTone(3)" onmouseup="stopTone()">
+              <img class = "image" src = "https://cdn.glitch.global/27d45646-6ef9-4144-b0eb-b147ee7484d8/red-button.png?v=1646762854434" alt = "red button" width = "100">
+            </button>
+            <button id="button4" onclick="guess(4)" onmousedown="startTone(4)" onmouseup="stopTone()">
+               <img class="image" src = "https://cdn.glitch.global/27d45646-6ef9-4144-b0eb-b147ee7484d8/yellow-button.png?v=1646763200828" alt= "yellow button" width = "100">
+            </button>
+            <button id="button5" onclick="guess(5)" onmousedown="startTone(5)" onmouseup="stopTone()">
+              <img class= "image" src="https://cdn.glitch.global/27d45646-6ef9-4144-b0eb-b147ee7484d8/brown-button.png?v=1646762832191" alt="brown button" width= "100">
+            </button>
+            <button id="button6" onclick="guess(6)" onmousedown="startTone(6)" onmouseup="stopTone()">
+              <img class="image" src= "https://cdn.glitch.global/27d45646-6ef9-4144-b0eb-b147ee7484d8/grey-button.png?v=1646754307619" alt="grey button" width="100">
+            </button>
+          </div>
+        
+    
+    <footer class="footer">
+      <div class="links"></div>
+      <a>
+        
+      </a>
+    </footer>
+  </body>
+</html>
