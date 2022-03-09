@@ -69,7 +69,7 @@ If I had more time to work on this project, I would implement four things: a but
 
 ## Interview Recording URL Link
 
-[My 5-minute Interview Recording] https://drive.google.com/file/d/18mPpXHF7huRmCctRQpALBVTkKYcB8obG/view?usp=sharing
+[My 5-minute Interview Recording] (https://drive.google.com/file/d/18mPpXHF7huRmCctRQpALBVTkKYcB8obG/view?usp=sharing)
 
 ## License
 
