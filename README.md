@@ -6,7 +6,7 @@ Submitted by: Kent Canonigo
 
 Time spent: 5-6 hours spent in total
 
-Link to project: https://glitch.com/edit/#!/opaque-kind-rugby 
+Link to project: https://opaque-kind-rugby.glitch.me
 
 ## Required Functionality
 
