@@ -16,6 +16,7 @@ var time = 30;
 // start and stop game functions
 function startGame() { 
   //initialize game variables
+  time = 30;
   clueHoldTime=1000; //resets clueholdTime
   randomPattern(1,7); //generates random pattern
   mistakeCounter = 0;
@@ -52,7 +53,6 @@ function timer() {
   }
   if (time < 1) {
     loseGame();
-    time = 30;
     clearInterval();
   }
 }
