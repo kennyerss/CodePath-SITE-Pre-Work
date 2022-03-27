@@ -3,31 +3,38 @@
 body {
   font-family: helvetica, arial, sans-serif;
   margin: 2em;
-  background-color: slategrey;
-  color: white;
+  background-color: #214001;
+  color: #F29472;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
 }
+
+p {
+ 
+  margin-bottom: 15px;
+  color: #F29472;
+  
+}
+
 
 h1 {
-  font-family: verdana, arial, sans-serif; 
+  font-family: sans-serif; 
+  margin: 20px;
+  
 }
 
-
-/* Very light scaling for our illustration */
-.illustration {
-  max-width: 100%;
-  max-height: var(--image-max-width);
-  margin-top: var(--image-margin);
-}
-
-/* Instructions */
-.instructions {
-  margin: 2rem auto 0;
-}
-
-/* Button - Add it from the README instructions */
 button {
-  padding: 20px;
-  border-radius: 30px;
+  padding: 50px;
+  border-radius: 19px;
+  font-size: 20px;
+}
+
+#startBtn, #stopBtn {
+  background: #2E5902;
+  color: white;
+  padding: 15px;
 }
 
 
@@ -37,6 +44,10 @@ button {
 
 #button1:active, #button1.lit{
   background: green;
+  background-image: url("https://cdn.glitch.global/27d45646-6ef9-4144-b0eb-b147ee7484d8/green-button.png?v=1646752898206");
+  background-size: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
 
 }
 
@@ -46,6 +57,10 @@ button {
 
 #button2:active, #button2.lit {
   background: blue;
+  background-image: url("https://cdn.glitch.global/27d45646-6ef9-4144-b0eb-b147ee7484d8/blue-button.png?v=1646762552067https://cdn.glitch.global/27d45646-6ef9-4144-b0eb-b147ee7484d8/blue-button.png?v=1646762836693");
+  background-size: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #button3 {
@@ -54,6 +69,10 @@ button {
 
 #button3:active, #button3.lit {
   background: red;
+  background-image: url("https://cdn.glitch.global/27d45646-6ef9-4144-b0eb-b147ee7484d8/red-button.png?v=1646762854434");
+  background-size: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #button4 {
@@ -62,6 +81,10 @@ button {
 
 #button4:active, #button4.lit{
   background: yellow;
+  background-image: url("https://cdn.glitch.global/27d45646-6ef9-4144-b0eb-b147ee7484d8/yellow-button.png?v=1646763200828");
+  background-size: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
   
 }
 #button5{
@@ -69,6 +92,10 @@ button {
 }
 #button5:active, #button5.lit{
   background: burlywood;
+  background-image: url("https://cdn.glitch.global/27d45646-6ef9-4144-b0eb-b147ee7484d8/brown-button.png?v=1646762832191");
+  background-size: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #button6{
@@ -77,41 +104,44 @@ button {
 
 #button6:active, #button6.lit{
   background: dimgrey;
+  background-image: url("https://cdn.glitch.global/27d45646-6ef9-4144-b0eb-b147ee7484d8/grey-button.png?v=1646754307619");
+  background-size: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-#gameButtonArea > button {
+.column {
+  display: flex;
+  flex: 50%;
+  padding: 15px;
+}
+
+.gameButtonArea {
+  display: flex;
+}
+
+#gameButtonArea > button,
+{
+ 
   width: 200px;
   height: 150px;
   margin: 2px;
 }
-input {
-  font-family: inherit;
-  font-size: 100%;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  transition: 500ms;
+
+section {
+  
+ display:flex; 
+  justify-content: start;
+  
+}
+
+.column1, .column2 {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .hidden {
   display:none;
 }
-/* Subheading */
-h2 {
-  color: #2800FF;
-}
 
-/* Interactive image */
-.illustration:active {
-  transform: translateY(5px);
-}
 
-/* Button dip
-- Toggling this class on and off will move it down and up again
-- The button transition property above determines the speed of the translate (500ms)
-*/
-.dipped {
-  transform: translateY(5px);
-}
