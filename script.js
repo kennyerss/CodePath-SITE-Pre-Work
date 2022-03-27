@@ -11,10 +11,12 @@ var volume = 0.5; // must be between 0.0 and 1.0
 var clueHoldTime = 1000; //intial value of how long to hold clue
 var guessCounter = 0;
 var mistakeCounter = 0;
+var time = 30;
 
+// start and stop game functions
 function startGame() { 
   //initialize game variables
-  clueHoldTime=1000; //resets holdTime
+  clueHoldTime=1000; //resets clueholdTime
   randomPattern(1,7); //generates random pattern
   mistakeCounter = 0;
   progress = 0;
@@ -22,15 +24,38 @@ function startGame() {
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
   playClueSequence();
+  //timer
+  clock = setInterval("timer()", 1000);
+  //make mistakeCount in HTML be 0 every time game restarts
+  document.getElementById("mistakeCount").innerHTML = 0;
+  //make timeRemaining in HTML be 30 every time game restarts
+  document.getElementById("timeRemaining").innerHTML = 30;
 }
 
 function stopGame() {
   gamePlaying = false;
+ 
   document.getElementById("startBtn").classList.remove("hidden");
-document.getElementById("stopBtn").classList.add("hidden");
+  document.getElementById("stopBtn").classList.add("hidden");
+  
+  clearInterval(clock);
+  
   
 }
 
+// timer function
+function timer() {
+  // decreases time remaining by and updates the span "timeRemaining" in HTML
+  time -= 1;
+  if (time < 30) {
+    document.getElementById("timeRemaining").innerHTML = time;
+  }
+  if (time < 1) {
+    loseGame();
+    time = 30;
+    clearInterval();
+  }
+}
 
 // Sound Synthesis Functions
 const freqMap = {
@@ -67,6 +92,7 @@ function stopTone() {
   tonePlaying = false
 }
 
+// light and clear buttons
 function lightButton(btn) {
   document.getElementById("button"+btn).classList.add("lit")
 }
@@ -75,6 +101,17 @@ function clearButton(btn) {
   document.getElementById("button"+btn).classList.remove("lit")
 }
 
+
+// generating random pattern
+function randomPattern(min, max) {
+  for (var i=0; i<6; i++) {
+    //generates numbers from 1-6
+    var randomNum = Math.floor(Math.random() * (max-min) + min);
+    pattern.push(randomNum);
+  }
+}
+
+// playing single clue
 function playSingleClue(btn) {
   if(gamePlaying){
     lightButton(btn);
@@ -83,12 +120,13 @@ function playSingleClue(btn) {
   }
 }
 
+// playing clue sequence with random pattern
 function playClueSequence(){
   guessCounter = 0;
   context.resume()
   let delay = nextClueWaitTime; //set delay to initial wait time
   for(let i=0;i<=progress;i++){ // for each clue that is revealed so far
-    clueHoldTime = clueHoldTime - 43; // decreases hold time for each turn 
+    clueHoldTime = clueHoldTime - 35; // decreases hold time for each turn 
     console.log("play single clue: " + pattern[i] + " in " + delay + "ms")
     setTimeout(playSingleClue,delay,pattern[i]) // set a timeout to play that clue
     delay += clueHoldTime;
@@ -96,6 +134,7 @@ function playClueSequence(){
   }
 }
 
+// lose game and win game functions
 function loseGame(){
   stopGame();
   alert("Game Over. You lost. Maybe next time!");
@@ -106,6 +145,7 @@ function winGame(){
   alert("Gamve Over. Congratulations, you won!");
 }
 
+// guess function
 function guess(btn){
   console.log("user guessed: " + btn);
   if(!gamePlaying){
@@ -128,25 +168,16 @@ function guess(btn){
     }
   }else { // otherwise when guess is incorrect, increment mistake
         mistakeCounter++;
+       document.getElementById("mistakeCount").innerHTML = mistakeCounter;
     if(mistakeCounter == 3) { //when mistake is 3, user loses the game
       loseGame();
     }
     }
 }
 
-function randomPattern(min, max) {
-  for (var i=0; i<6; i++) {
-    //generates numbers from 1-6
-    var randomNum = Math.floor(Math.random() * (max-min) + min);
-    pattern.push(randomNum);
-  }
-}
 
- function showImage(){
-   document.getElementById('image').style.display = "inline-block";
-   
-  
-                    }
+ 
+
 // Page Initialization
 // Init Sound Synthesizer
 var AudioContext = window.AudioContext || window.webkitAudioContext 
