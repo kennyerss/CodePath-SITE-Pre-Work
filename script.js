@@ -11,12 +11,12 @@ var volume = 0.5; // must be between 0.0 and 1.0
 var clueHoldTime = 1000; //intial value of how long to hold clue
 var guessCounter = 0;
 var mistakeCounter = 0;
-var time = 30;
+var time = 50;
 
 // start and stop game functions
 function startGame() { 
   //initialize game variables
-  time = 30;
+  time = 50;
   clueHoldTime=1000; //resets clueholdTime
   randomPattern(1,7); //generates random pattern
   mistakeCounter = 0;
@@ -30,7 +30,7 @@ function startGame() {
   //make mistakeCount in HTML be 0 every time game restarts
   document.getElementById("mistakeCount").innerHTML = 0;
   //make timeRemaining in HTML be 30 every time game restarts
-  document.getElementById("timeRemaining").innerHTML = 30;
+  document.getElementById("timeRemaining").innerHTML = 50;
 }
 
 function stopGame() {
@@ -48,7 +48,7 @@ function stopGame() {
 function timer() {
   // decreases time remaining by and updates the span "timeRemaining" in HTML
   time -= 1;
-  if (time < 30) {
+  if (time < 50) {
     document.getElementById("timeRemaining").innerHTML = time;
   }
   if (time < 1) {
