@@ -39,10 +39,9 @@ The following **additional** features are implemented:
 ## Video Walkthrough (GIF)
 
 If you recorded multiple GIFs for all the implemented features, you can add them here:
-![](https://i.imgur.com/2C9r6Zx.gif)
-![](https://i.imgur.com/NclC0ro.gif)
-![](https://i.imgur.com/ZBUWHCa.gif)
-![](https://i.imgur.com/jT449on.gif)
+![](https://i.imgur.com/qQDVSvH.gif)
+![](https://i.imgur.com/2ssmz5a.gif)
+![](https://i.imgur.com/f6ljLMg.gif)
 
 
 ## Reflection Questions
@@ -89,3 +88,4 @@ If I had more time to work on this project, I would style my website so that it 
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
